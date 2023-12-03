@@ -15,11 +15,8 @@ def _word_to_num(line: str) -> str:
     return line
 
 
-def main():
+def main(data):
     total = 0
-    p = Path(__file__).with_name('input.txt')
-    with p.open('r') as f:
-        data = f.read().splitlines()
     for line in data:
         all = ALLREG.findall(line)
         value = f"{all[0]}{all[-1]}"
@@ -28,4 +25,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    p = Path(__file__).with_name('input.txt')
+    with p.open('r') as f:
+        data = f.read().splitlines()
+    main(data)

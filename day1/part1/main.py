@@ -2,11 +2,7 @@ import re
 from pathlib import Path
 
 
-def main():
-    p = Path(__file__).with_name('input.txt')
-    with p.open('r') as f:
-        data = f.read().splitlines()
-
+def main(data):
     total = 0
     for line in data:
         nums = ''.join(re.findall(r"\d+", line))
@@ -17,4 +13,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    p = Path(__file__).with_name('input.txt')
+    with p.open('r') as f:
+        data = f.read().splitlines()
+    main(data)

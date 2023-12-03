@@ -21,10 +21,7 @@ def game_is_valid(game) -> bool:
     return True
 
 
-def main() -> None:
-    p = Path(__file__).with_name('input.txt')
-    with p.open('r') as f:
-        data = f.read().strip().splitlines()
+def main(data) -> None:
     total = 0
     for line in data:
         game_id, games = get_game_id_and_games(line)
@@ -35,4 +32,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    p = Path(__file__).with_name('input.txt')
+    with p.open('r') as f:
+        data = f.read().strip().splitlines()
+    main(data)

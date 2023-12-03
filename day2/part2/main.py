@@ -16,10 +16,7 @@ def get_maxs(games) -> t.Dict[str, int]:
     return {col: max(numvals[col]) for col in numvals.keys()}
 
 
-def main() -> None:
-    p = Path(__file__).with_name('input.txt')
-    with p.open('r') as f:
-        data = f.read().strip().splitlines()
+def main(data) -> None:
     total = 0
     for line in data:
         games = line.split(":")[1].split(";")
@@ -33,4 +30,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    p = Path(__file__).with_name('input.txt')
+    with p.open('r') as f:
+        data = f.read().strip().splitlines()
+    main(data)
